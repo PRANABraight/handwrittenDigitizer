@@ -15,7 +15,7 @@ import seaborn as sns
 nltk.download("punkt")
 
 # Set Tesseract path (Windows)
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # EasyOCR Reader (preload for faster performance)
 easyocr_reader = easyocr.Reader(["en"])  # You can add other languages here
@@ -51,13 +51,13 @@ if uploaded_file:
         st.image([image, thresh], caption=["Original Image", "Processed Image"], use_container_width=True)
 
         # OCR Extraction
-        extracted_text = ""
-        if ocr_choice == "Tesseract OCR":
-            custom_config = r'--oem 3 --psm 6'
-            extracted_text = pytesseract.image_to_string(thresh, config=custom_config).strip()
-        elif ocr_choice == "EasyOCR":
-            results = easyocr_reader.readtext(img_np, detail=0)
-            extracted_text = " ".join(results)
+        # extracted_text = ""
+        # if ocr_choice == "Tesseract OCR":
+        #     custom_config = r'--oem 3 --psm 6'
+        #     extracted_text = pytesseract.image_to_string(thresh, config=custom_config).strip()
+        # elif ocr_choice == "EasyOCR":
+        results = easyocr_reader.readtext(img_np, detail=0)
+        extracted_text = " ".join(results)
 
         # Show extracted text
         st.subheader("📄 Extracted Text:")
