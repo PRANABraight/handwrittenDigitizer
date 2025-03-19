@@ -51,13 +51,13 @@ if uploaded_file:
         st.image([image, thresh], caption=["Original Image", "Processed Image"], use_container_width=True)
 
         # OCR Extraction
-        # extracted_text = ""
-        # if ocr_choice == "Tesseract OCR":
-        #     custom_config = r'--oem 3 --psm 6'
-        #     extracted_text = pytesseract.image_to_string(thresh, config=custom_config).strip()
-        # elif ocr_choice == "EasyOCR":
-        results = easyocr_reader.readtext(img_np, detail=0)
-        extracted_text = " ".join(results)
+        extracted_text = ""
+        if ocr_choice == "Tesseract OCR":
+            custom_config = r'--oem 3 --psm 6'
+            extracted_text = pytesseract.image_to_string(thresh, config=custom_config).strip()
+        elif ocr_choice == "EasyOCR":
+            results = easyocr_reader.readtext(img_np, detail=0)
+            extracted_text = " ".join(results)
 
         # Show extracted text
         st.subheader("📄 Extracted Text:")
