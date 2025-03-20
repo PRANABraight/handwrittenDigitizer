@@ -6,4 +6,4 @@ pillow
 matplotlib
 seaborn
 nltk
-spellchecker
+pyspellchecker
