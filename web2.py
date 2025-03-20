@@ -8,7 +8,7 @@ import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 import matplotlib.pyplot as plt
 import seaborn as sns
-from spellchecker import SpellChecker
+
 
 # Download NLTK data
 nltk.download("punkt")
