@@ -23,9 +23,6 @@ spell = SpellChecker()
 # Streamlit UI
 st.title("📝 Handwriting Digitizer & Text Analyzer")
 
-# Sidebar
-st.sidebar.header("Settings")
-ocr_choice = st.sidebar.radio("Choose OCR Engine:", ["EasyOCR", "Google Vision API"])
 
 st.info("For best accuracy, ensure clear handwriting on a plain white background.")
 
